@@ -1,8 +1,10 @@
+package main;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ysun on 3/26/16.
+ * Time : O(n)
  */
 public class FlipGame {
 
