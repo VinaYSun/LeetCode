@@ -2,6 +2,11 @@ package main;
 
 /**
  * Implement the square root of an integer.
+ *
+ * Start: 1; End: x [long]
+ * start + 1 < end : mid * mid <=, >
+ * end * end ; start * start
+ *
  * @Return integer
  */
 public class SquareRoot {
