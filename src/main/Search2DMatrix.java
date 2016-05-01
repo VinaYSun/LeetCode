@@ -1,7 +1,12 @@
 package main;
 
 /**
- * Created by ysun on 4/29/16.
+ * [[1, 2, 3, 5], [7, 8, 10, 13],[14, 15, 19, 20]]
+ *
+ * matrix[0] = [1, 2, 3, 5]
+ * matrix[0][0] = [1]
+ *
+ * matrix[1] = [7, 8 ,10, 13]
  */
 public class Search2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
