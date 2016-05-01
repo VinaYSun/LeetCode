@@ -11,7 +11,7 @@ public class StrStr {
 
         StrStr s = new StrStr();
         s.strStr2(source, target);
-        System.out.println("Result is : " + s.strStr2(source, target));
+        System.out.println("Result is : " + s.strStr2(target, source));
     }
     /**
      * This code was newly wrote on May 1st, 2016
@@ -23,7 +23,7 @@ public class StrStr {
         if (target == null || source == null) {
             return -1;
         }
-        for (int i = 0; i < source.length() - target.length() + 1; i++ ) {
+        for (int i = 0; i < source.length() - target.length() + 1; i++ ) { // takes care of source.length < target.length
             int j;
             for (j = 0; j < target.length(); j++) {
                 if (source.charAt(i + j) != target.charAt(j)) {
