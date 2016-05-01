@@ -16,6 +16,8 @@ public class StrStr {
     /**
      * This code was newly wrote on May 1st, 2016
      *
+     * O((n-m+1) * m)
+     *
      */
     public int strStr2(String source, String target) {
         if (target == null || source == null) {
