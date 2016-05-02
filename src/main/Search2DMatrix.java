@@ -9,6 +9,10 @@ package main;
  * matrix[1] = [7, 8 ,10, 13]
  *
  */
+// A coordinate transformation:
+// virtualIndex Max -> row * col - 1 (end)
+    //          Min -> 0 (start)
+    // num[virtualIndex/column][virtualIndex % column] -> num["mid"]
 public class Search2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length ==0) {
