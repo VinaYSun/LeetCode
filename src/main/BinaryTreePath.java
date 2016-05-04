@@ -32,14 +32,14 @@ public class BinaryTreePath {
             return;
         }
         // when this node is the end , adding the obtained path
-        if(node.left==null && node.right==null) {
+        if(node.left == null && node.right == null) {
             res.add(path + "->" + node.val);
             return;
         }
-        if(node.left==null && node.right!=null) {
+        if(node.left == null && node.right != null) {
             helper(node.right, path + "->" + node.val, res);
         }
-        if(node.right!=null && node.right==null) {
+        if(node.right != null && node.right == null) {
             helper(node.left, path + "->" + node.val, res);
         }
     }
