@@ -7,7 +7,7 @@ public class RangeSearch {
     public int[] getRange(int[] nums, int target) {
         int[] range = new int[2];
         if ( nums == null || nums.length == 0 ) {
-            return new int[]{-1 , -1};
+            return new int[]{-1 , -1}; // returning -1 -1
         }
         int start = 0, end = nums.length - 1;
 
@@ -32,8 +32,8 @@ public class RangeSearch {
         }
 
         // search for the left bound
-        start = 0;              //!attention
-        end = nums.length - 1;  //!attention
+        start = 0;              // not initiate, but giving new value
+        end = nums.length - 1;
         while (start + 1 < end) {
             int mid;
             mid = start + (end - start) / 2;
@@ -52,7 +52,7 @@ public class RangeSearch {
         } else {
             return new int[]{-1, -1};
         }
-        return range;
+        return range; // return statement
     }
 }
 
