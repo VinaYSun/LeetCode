@@ -14,7 +14,7 @@ import java.util.Stack;
 
 public class BinaryTreeInOrderTraversal {
 
-    public ArrayList<Integer> postorderTraversal(TreeNode root) {
+    public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode current = root;
@@ -48,6 +48,6 @@ public class BinaryTreeInOrderTraversal {
 
         BinaryTreeInOrderTraversal bs = new BinaryTreeInOrderTraversal();
 
-        System.out.println("Tree nodes are" + bs.postorderTraversal(root));
+        System.out.println("Tree nodes are" + bs.inorderTraversal(root));
 
     }}
