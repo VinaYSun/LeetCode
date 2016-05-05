@@ -13,6 +13,7 @@ public class Search2DMatrixII {
      *  4,  7, 9, 10, 16
      *  5,  10, 11, 14, 18
      *
+     *  O(m + n)
      */
     // return occurrences of a target number in Matrix
     // e.g. given target 10, return true; given target 6 return false
@@ -73,4 +74,6 @@ public class Search2DMatrixII {
         }
         return result;
     }
+
+    // should have another solution, dived and conquer ...
 }
