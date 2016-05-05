@@ -28,7 +28,7 @@ public class Search2DMatrix {
 
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
-            int num = matrix[mid/column][mid % column];
+            int num = matrix[mid / column][mid % column];
             if (num == target) {
                 return true;
             } else if (num < target ) {
