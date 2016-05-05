@@ -46,21 +46,18 @@ public class BinaryTreePreorderTraversal {
         return result;
     }
 
-    // solution 2 : Traverse
+    // solution 2 : Recursive
     public ArrayList<Integer> traversalRec(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
-        helper(root, result);
-        return result;
-    }
-
-    public void helper(TreeNode node, ArrayList<Integer> result){
-        if (node == null) {
-            return;
+        if (root == null) {
+            return result;
         }
-        // 前序，所以先加入根节点，再加入左子树，右子树
-        result.add(node.val);
-        helper(node.left, result);
-        helper(node.right, result);
+
+        result.add(root.val);
+        result.addAll(traversalRec(root.left));
+        result.addAll(traversalRec(root.right));
+
+        return result;
     }
 
     // solution 3: divide & conquer
