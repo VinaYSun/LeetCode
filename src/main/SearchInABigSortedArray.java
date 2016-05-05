@@ -26,7 +26,7 @@ public class SearchInABigSortedArray {
             int mid = start + (end - start) / 2;
             if (reader.get(mid) == target) {
                 end = mid;
-            } else if (reader.get(mid) < target && reader.get(mid) != -1){ // condition check for -1 is important
+            } else if (reader.get(mid) < target && reader.get(mid) != -1){ // condition check for -1 is important, if this is missing, the test doesn't pass on lintcode
                 start = mid;
             } else {
                 end = mid;
