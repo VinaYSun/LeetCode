@@ -17,23 +17,41 @@ public class BinaryTreeInOrderTraversal {
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
+        if (root == null) {
+            return result;
+        }
         TreeNode current = root;
-        while (current != null || !stack.empty()) {
+        Boolean done = false;
+        while(true) {
+            // save current node' left child into stack
             while (current != null) {
-                stack.add(current);
+                stack.push(current);
                 current = current.left;
             }
-            current = stack.peek();
-            stack.pop();
-            // put top node into the list from stack
+
+            if (stack.empty()) {
+                break;
+            }
+            // pop from the first left child, then middle, then right
+            current = stack.pop();
             result.add(current.val);
+
+            // deal with right child tree
             current = current.right;
+
         }
         return result;
     }
 
     public static void main(String[] args) {
 
+        /**
+         *      5
+         *     / \
+         *    1  2
+         *   / \
+         *  4  6
+         */
         TreeNode root = new TreeNode(5);
         TreeNode a = new TreeNode(1);
         TreeNode b = new TreeNode(2);

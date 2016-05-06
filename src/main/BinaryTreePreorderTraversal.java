@@ -32,10 +32,12 @@ public class BinaryTreePreorderTraversal {
         if (root == null) {
             return result;
         }
+        // stack first push root node
         stack.push(root);
         while(!stack.empty()) {
             TreeNode node = stack.pop();
             result.add(node.val);
+            // right goes last, so push first
             if (node.right != null) {
                 stack.push(node.right);
             }
