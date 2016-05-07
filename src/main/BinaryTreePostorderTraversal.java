@@ -32,8 +32,11 @@ public class BinaryTreePostorderTraversal {
         }
 
         stack.push(root);
+        // post order but in parent -> right -> left order
+        // in stack pushing, push the left first, then the right
         while (!stack.empty()) {
             TreeNode curr = stack.pop();
+            // each pop, push each node into the 2nd stack
             output.push(curr);
 
             if (curr.left != null) {
@@ -44,6 +47,7 @@ public class BinaryTreePostorderTraversal {
             }
         }
 
+        // pop 2nd stack
         while (!output.isEmpty()) {
             result.add(output.pop().val);
         }

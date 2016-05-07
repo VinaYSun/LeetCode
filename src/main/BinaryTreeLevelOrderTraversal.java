@@ -32,10 +32,10 @@ public class BinaryTreeLevelOrderTraversal {
                 TreeNode node = queue.poll();
                 level.add(node.val);
                 if (node.left != null) {
-                    queue.offer(node.left); // prepare for next level
+                    queue.offer(node.left);
                 }
                 if (node.right != null) {
-                    queue.offer(node.right); // prepare for next level
+                    queue.offer(node.right);
                 }
             }
             result.add(level);
@@ -86,7 +86,6 @@ public class BinaryTreeLevelOrderTraversal {
     /**
      * DFS
      * Didn't fully understand this part
-     *
      */
 //    public ArrayList<ArrayList<Integer>> levelOrderDFS(TreeNode root) {
 //        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();

@@ -21,17 +21,13 @@ public class BinaryTreeInOrderTraversal {
             return result;
         }
         TreeNode current = root;
-        Boolean done = false;
-        while(true) {
-            // save current node' left child into stack
+        while( current != null || !stack.isEmpty()) {
+            // save all left nodes into stack
             while (current != null) {
                 stack.push(current);
                 current = current.left;
             }
 
-            if (stack.empty()) {
-                break;
-            }
             // pop from the first left child, then middle, then right
             current = stack.pop();
             result.add(current.val);
