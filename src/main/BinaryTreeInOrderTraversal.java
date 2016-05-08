@@ -22,19 +22,17 @@ public class BinaryTreeInOrderTraversal {
         }
         TreeNode current = root;
         while( current != null || !stack.isEmpty()) {
-            // save all left nodes into stack
+            // move cur pointer to the most left
             while (current != null) {
                 stack.push(current);
                 current = current.left;
             }
-
-            // pop from the first left child, then middle, then right
+            // move pointer from left to its parent node
             current = stack.pop();
             result.add(current.val);
 
-            // deal with right child tree
+            // move pointer to right child
             current = current.right;
-
         }
         return result;
     }
@@ -61,7 +59,6 @@ public class BinaryTreeInOrderTraversal {
         a.right = d;
 
         BinaryTreeInOrderTraversal bs = new BinaryTreeInOrderTraversal();
-
         System.out.println("Tree nodes are" + bs.inorderTraversal(root));
 
     }}

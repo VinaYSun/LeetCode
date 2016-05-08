@@ -3,17 +3,18 @@ package main;
 /**
  * Created by ysun on 5/1/16.
  */
-class ArrayReader {
-    // get the number at index, return -1 if not exists.
-    public int get(int index) {
-        return 0; // for compile reason returning 0
-    };
-}
+
 public class SearchInABigSortedArray {
+    private class ArrayReader {
+        // get the number at index, return -1 if not exists.
+        public int get(int index) {
+            return 0; // for compile reason returning 0
+        };
+    }
     /**
-     * @param reader: An instance of ArrayReader.
-     * @param target: An integer
-     * @return : An integer which is the index of the target number
+     * Find a very big index first, this index should be reader.get(index - 1) < target, also reader.get(index - 1) != -1
+     *
+     *
      */
     public int searchBigSortedArray(ArrayReader reader, int target) {
         int index = 1;

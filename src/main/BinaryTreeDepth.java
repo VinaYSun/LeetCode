@@ -6,6 +6,14 @@ import java.util.Queue;
 /**
  * Created by ysun on 5/5/16.
  */
+class TreeNode {
+    TreeNode left;
+    TreeNode right;
+    int val;
+    TreeNode (int val) {
+        this.val = val;
+    }
+}
 public class BinaryTreeDepth {
 
     public int getDepthRec(TreeNode root) {
@@ -16,9 +24,16 @@ public class BinaryTreeDepth {
     }
 
     /**
-     * similar as level order traversal
-     * @param root
-     * @return
+     ********  Adding dummy node between each layer *******
+     *
+     * iterate through queue until is empty
+     *   popping out first node in queue
+     *
+     * when it is "dummy node", depth is adding one;
+     *      also when queue is not empty, adding a dummy node at the end of next layer
+     * if left child exists, adding;
+     * if right child exists, adding.
+     *
      */
     public int getDepth(TreeNode root) {
         if (root == null) {

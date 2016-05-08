@@ -19,7 +19,7 @@ public class BinaryTreeMaximumPathSum {
      * An inner class that contains : maxPath from any to any, maxPath from root to any
      *
      * The longest path can be
-     * - path that goes through root
+     * - path that goes through root,
      * - path that goes from left child tree, to root node
      *          or goes from right child tree, to root node
      */

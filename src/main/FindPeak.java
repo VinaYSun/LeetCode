@@ -12,8 +12,13 @@ public class FindPeak {
      * Find a Peak that satisfies A[p] > A[p-1] && A[p] > A[p+1] in the array.
      * (the array may contains multiple peaks, find any of them)
      *
-     * @param A
-     * @return
+     *
+     * start取第二位；end取倒数第二位
+     * int[mid] < int[mid + 1] start = mid
+     * int[mid] >= int[mid - 1] end = mid
+     *
+     * int[start] < int[end] return end
+     *
      */
     public int findPeak(int[] A) {
         int start = 1; // 非第一位

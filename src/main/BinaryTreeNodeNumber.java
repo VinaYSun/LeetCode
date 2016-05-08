@@ -8,7 +8,11 @@ import java.util.Queue;
  */
 public class BinaryTreeNodeNumber {
 
-    // Non recursive
+    /**
+     * Non recursive -
+     * use Queue
+     * do BFS
+     */
     public int getNumberNonRec(TreeNode root) {
         if (root == null) {
             return 0;

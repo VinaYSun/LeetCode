@@ -5,6 +5,14 @@ package main;
  */
 public class BalancedBinaryTree {
 
+    /**
+     * Divide and Conquer
+     *
+     * 两种情况，非平衡树，平衡树
+     *
+     * helper function 返回值 -1-非衡；树深-平衡
+     *
+     */
     public boolean isBalanced(TreeNode root) {
         if ( maxDepth(root) != -1 ) {
             return true;
@@ -14,9 +22,12 @@ public class BalancedBinaryTree {
     }
 
     /**
-     * 输入根节点，输出
-     * @param node 根节点
-     * @return 树深 --  -1 ：非平衡树； 0 ： 空树； 其它：平衡树的树深
+     * Divide and Conquer
+     *
+     * node是空，深度为0的平衡树
+     * 求左树深；求右树深
+     * 左/右树树深为 -1；左右树深相差大于1时，返回非平衡-1
+     * Otherwise, 返回左右树深最大值 + 1 返回
      */
     private int maxDepth(TreeNode node){
         if (node == null) {

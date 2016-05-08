@@ -14,9 +14,9 @@ public class BinaryTreeMaximumPathSumII {
      * The node might have negative value
      * for example {-1, -3, -7}
      *
-     * then the maximum would be largest value among negative numbers
-     * so when root == null, maximum path sum is min_value of integer
-     * if all path < 0, at least give it 0. Then adding root value.
+     * then the maximum would be root only
+     * so when root == null, maximum path sum is MIN_VALUE
+     * if all path < 0, ignore that path and return 0. Then path will be only adding root value.
      *
      * @param root
      * @return

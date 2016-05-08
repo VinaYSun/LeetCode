@@ -6,6 +6,12 @@ package main;
  */
 public class ClassicBinarySearch {
 
+    /**
+     *
+     * start + 1 < mid
+     * int[mid] =, >, < target : end, end, start= mid
+     * int[end]/[start] = target : result = end, start
+     */
     public int BinarySearch(int[] nums, int target) {
         if (nums == null || nums.length == 0){
             return -1;

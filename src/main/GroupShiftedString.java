@@ -16,6 +16,8 @@ public class GroupShiftedString {
         List<List<String>> result = new ArrayList<List<String>>();
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
+        // iterate every string
+        // - building a map,  {code, [List Of Same Code String]}
         for (String s : strings) {
             String code = getCode(s);
             List<String> val = new ArrayList<String>();
@@ -28,6 +30,7 @@ public class GroupShiftedString {
             map.put(code, val);
         }
 
+        // Sort strings by code
         for (String key : map.keySet()) {
             List<String> val = map.get(key);
             Collections.sort(val);

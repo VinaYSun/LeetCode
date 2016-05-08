@@ -18,13 +18,13 @@ public class FlipGame {
     public List<String> getFlipResult(String s) {
         List<String> res = new ArrayList<String>();
         if (s.length() < 2) return res;
-        search(s, res, 0);
+        search(s, res);
         return res;
     }
 
-    public void search(String s, List<String> res, int len) {
-        for (int i = len; i < s.length() - 1; i++) {
-            if (s.charAt(i) == '+' && s.charAt(i) == s.charAt(i + 1)) {
+    public void search(String s, List<String> res) {
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == '+' && s.charAt(i + 1) == '+') {
                 String t = s.substring(0, i) + "--" + s.substring(i + 2);
                 res.add(t);
             }

@@ -9,7 +9,7 @@ package main;
  * matrix[1] = [7, 8 ,10, 13]
  *
  */
-// A coordinate transformation:
+// A coordinate transformation: 坐标变换
 // virtualIndex Max -> row * col - 1 (end)
     //          Min -> 0 (start)
     // num[virtualIndex/column][virtualIndex % column] -> num["mid"]

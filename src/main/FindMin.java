@@ -12,8 +12,9 @@ public class FindMin {
      * i.e. 4 5 6 7 0 1 2
      * return 0
      *
-     * @param num
-     * @return
+     * target == int[end]
+     * int[mid] <, >, = target : end, start, end = mid
+     * int[start] < int[end] , return start
      */
     public int findMin(int[] num) {
         if (num == null || num.length == 0) {

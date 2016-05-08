@@ -4,20 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ysun on 4/17/16.
+ *
+ *
  */
 
 public class BinaryTreePath {
 
-    public class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int x) {
-            this.val = x;
-        }
-    }
-
+    /**
+     * @param root
+     * @return all root-to-leaf paths
+     */
     public List<String> findPath(TreeNode root) {
         List<String> res = new ArrayList<String>();
         if(root == null) {
@@ -27,20 +23,34 @@ public class BinaryTreePath {
         return res;
     }
 
+    /**
+     *
+     * Black box for processing paths.
+     *
+     */
     private void helper(TreeNode node, String path, List<String> res) {
         if(node == null) {
             return;
         }
-        // when this node is the end , adding the obtained path
+        // when this node is leaf node
+        // one path finished, adding to result
         if(node.left == null && node.right == null) {
-            res.add(path + "->" + node.val);
+            res.add(path);
             return;
         }
-        if(node.left == null && node.right != null) {
-            helper(node.right, path + "->" + node.val, res);
+
+        // move pointer from current to left child
+        // also add left child's value onto path
+        if(node.left != null) {
+            String p = path + "->" + String.valueOf(node.left.val);
+            helper(node.left, p, res);
         }
-        if(node.right != null && node.right == null) {
-            helper(node.left, path + "->" + node.val, res);
+
+        // move pointer from current to right child
+        // also add right child's value onto path
+        if(node.right != null) {
+            String p = path + "->" + String.valueOf(node.right.val);
+            helper(node.right, p, res);
         }
     }
 }
