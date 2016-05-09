@@ -3,8 +3,17 @@ package main;
 /**
  * Created by ysun on 5/8/16.
  */
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) {
+        val = x;
+        next = null;
+    }
+}
+
 public class RemoveDuplicateFromSortedList {
-    private class ListNode {
+    public class ListNode {
         int val;
         ListNode next;
         ListNode(int x) {
