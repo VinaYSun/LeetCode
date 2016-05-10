@@ -4,53 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- *
+ * 注意
+ * 1. 记录path时，做int to String装换，String.valueOf(node.val)
+ * 2. 遇到空节点返回，叶节点在result里传入的path
+ * 3. 向左走向右走的传入path要包含左/右点的val, 例如function(path + "->" + root.left.val)
  */
 
 public class BinaryTreePath {
 
-    /**
-     * @param root
-     * @return all root-to-leaf paths
-     */
     public List<String> findPath(TreeNode root) {
-        List<String> res = new ArrayList<String>();
+        List<String> result = new ArrayList<String>();
         if(root == null) {
-            return res;
+            return result;
         }
-        helper(root, String.valueOf(root.val), res);
-        return res;
+        String path = String.valueOf(root.val);
+        helper(root, path, result);
+        return result;
     }
 
-    /**
-     *
-     * Black box for processing paths.
-     *
-     */
-    private void helper(TreeNode node, String path, List<String> res) {
-        if(node == null) {
+    private void helper(TreeNode root, String path, List<String> result) {
+        if(root == null) {
             return;
         }
-        // when this node is leaf node
-        // one path finished, adding to result
-        if(node.left == null && node.right == null) {
-            res.add(path);
+        if(root.left == null && root.right == null) {
+            result.add(path);
             return;
         }
 
-        // move pointer from current to left child
-        // also add left child's value onto path
-        if(node.left != null) {
-            String p = path + "->" + String.valueOf(node.left.val);
-            helper(node.left, p, res);
+        if(root.left != null) {
+            helper(root.left, path + "->" + String.valueOf(root.left.val), result);
         }
 
-        // move pointer from current to right child
-        // also add right child's value onto path
-        if(node.right != null) {
-            String p = path + "->" + String.valueOf(node.right.val);
-            helper(node.right, p, res);
+        if(root.right != null) {
+            helper(root.right, path + "->" + String.valueOf(root.right.val), result);
         }
     }
 }
