@@ -16,6 +16,7 @@ public class FirstBadVersion {
      * start + 1 < end: function(mid) true ; false (end = mid ; sstart = mid)
      * function(start) == true rtn OR function(mid)
      */
+    /*
     public int findFirstBadVersion(int n) {
         // write your code here
         int start, end;
@@ -35,5 +36,6 @@ public class FirstBadVersion {
             return end;
         }
     }
+    */
 
 }

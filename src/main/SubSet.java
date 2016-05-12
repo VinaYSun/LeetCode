@@ -21,19 +21,23 @@ public class SubSet {
 
         Arrays.sort(S);
 
-        ArrayList<Integer> path = new ArrayList<Integer>();
-        helperFunctionDFS(S, 0, path, ret);
+        ArrayList<Integer> subset = new ArrayList<Integer>();
+        helperFunctionDFS(S, 0, subset, ret);
 
         return ret;
     }
 
-    public void helperFunctionDFS(int[] S, int index, ArrayList<Integer> path, List<List<Integer>> ret) {
-        ret.add(new ArrayList<Integer>(path));
+    // input : data set, a index, subset, result
+    public void helperFunctionDFS(int[] S, int index, ArrayList<Integer> subset, List<List<Integer>> ret) {
+        ret.add(new ArrayList<Integer>(subset));
 
+        // Iterating from start element to the last element in the set
         for (int i = index; i < S.length; i++) {
-            path.add(S[i]);
-            helperFunctionDFS(S, i + 1, path, ret);
-            path.remove(path.size() - 1);
+            //
+            subset.add(S[i]);
+            helperFunctionDFS(S, i + 1, subset, ret);
+            // remove the last element
+            subset.remove(subset.size() - 1);
         }
     }
 

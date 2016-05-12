@@ -7,6 +7,15 @@ import java.util.ArrayList;
  * Created by ysun on 5/8/16.
  */
 public class LowestCommonAncestor {
+    public class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        TreeNode parent;
+        int val;
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
 
     // Solution 1, based on the TreeNode has parent pointer
     public TreeNode lowestCommonAncestor(TreeNode node1, TreeNode node2) {
