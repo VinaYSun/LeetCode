@@ -10,34 +10,29 @@ import java.util.List;
 public class SubSet {
     /**
      * Recursive way
-     * 1. sort
-     * 2. helperFunctionDFS
+     *
+     * using kind of stack...
      */
-    public List<List<Integer>> subSet(int[] S){
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
-        if (S == null) {
-            return ret;
+    public ArrayList<ArrayList<Integer>> subSet(int[] nums) {
+        // write your code here
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if (nums == null || nums.length == 0) {
+            return result;
         }
+        Arrays.sort(nums);
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
-        Arrays.sort(S);
-
-        ArrayList<Integer> subset = new ArrayList<Integer>();
-        helperFunctionDFS(S, 0, subset, ret);
-
-        return ret;
+        subsetHelper(result, list, 0, nums);
+        return result;
     }
 
-    // input : data set, a index, subset, result
-    public void helperFunctionDFS(int[] S, int index, ArrayList<Integer> subset, List<List<Integer>> ret) {
-        ret.add(new ArrayList<Integer>(subset));
-
-        // Iterating from start element to the last element in the set
-        for (int i = index; i < S.length; i++) {
-            //
-            subset.add(S[i]);
-            helperFunctionDFS(S, i + 1, subset, ret);
-            // remove the last element
-            subset.remove(subset.size() - 1);
+    private void subsetHelper(ArrayList<ArrayList<Integer>> result,
+                              ArrayList<Integer> list, int pos, int[] nums) {
+        result.add(new ArrayList<Integer>(list));
+        for (int i = pos; i < nums.length; i++) {
+            list.add(nums[i]);
+            subsetHelper(result, list, i + 1, nums);
+            list.remove(list.size() - 1);
         }
     }
 

@@ -21,13 +21,13 @@ public class StrStr {
      * Brute-force, worst case O(nm)
      */
     public int strStr2(String source, String target) {
-        if (target == null || source == null) {
+        if (source == null || target == null) {
             return -1;
         }
-        for (int i = 0; i < source.length() - target.length() + 1; i++ ) { // takes care of source.length < target.length
+        for (int i = 0; i < source.length() - target.length() + 1; i++) {
             int j;
             for (j = 0; j < target.length(); j++) {
-                if (source.charAt(i + j) != target.charAt(j)) {
+                if (source.charAt(i + j) != target.charAt(j)){
                     break;
                 }
             }

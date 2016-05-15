@@ -17,17 +17,18 @@ public class SearchInABigSortedArray {
      *
      */
     public int searchBigSortedArray(ArrayReader reader, int target) {
+        if (reader == null) {
+            return -1;
+        }
         int index = 1;
         while (reader.get(index - 1) < target && reader.get(index - 1) != -1) {
             index = index * 2;
         }
-        int start = 0;
-        int end = index - 1;
+
+        int start = 0, end = index - 1;
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
-            if (reader.get(mid) == target) {
-                end = mid;
-            } else if (reader.get(mid) < target && reader.get(mid) != -1){ // condition check for -1 is important, if this is missing, the test doesn't pass on lintcode
+            if (reader.get(mid) < target && reader.get(mid) != -1) {
                 start = mid;
             } else {
                 end = mid;
@@ -35,7 +36,8 @@ public class SearchInABigSortedArray {
         }
         if (reader.get(start) == target) {
             return start;
-        } else if (reader.get(end) == target) {
+        }
+        if (reader.get(end) == target) {
             return end;
         }
         return -1;
