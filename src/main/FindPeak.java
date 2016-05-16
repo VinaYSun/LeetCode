@@ -15,20 +15,19 @@ public class FindPeak {
      *
      * start取第二位；end取倒数第二位
      * int[mid] < int[mid + 1] start = mid
-     * int[mid] >= int[mid - 1] end = mid
+     * int[mid] < int[mid - 1] end = mid
      *
      * int[start] < int[end] return end
      *
      */
     public int findPeak(int[] A) {
-        int start = 1; // 非第一位
-        int end = A.length - 1; //非最后一位
+        int start = 1, end = A.length - 2;
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
-            if (A[mid] < A[mid + 1]) {
-                start = mid;
-            } else if (A[mid] > A[mid - 1]) {
+            if (A[mid] < A[mid - 1]) {
                 end = mid;
+            } else if (A[mid] < A[mid + 1]) {
+                start = mid;
             } else {
                 end = mid;
             }

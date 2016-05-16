@@ -12,6 +12,14 @@ package main;
  *
  */
 public class ReverseLinkedListII {
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (m >= n || head == null) {
             return head;

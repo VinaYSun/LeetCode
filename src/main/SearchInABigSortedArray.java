@@ -25,6 +25,7 @@ public class SearchInABigSortedArray {
             index = index * 2;
         }
 
+        // 1, 2, 3, 4, 5, ...., big number, big number, -1, -1, -1
         int start = 0, end = index - 1;
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
