@@ -20,7 +20,6 @@ public class StrobogrammaticNumber {
         if(s == null || s.length() == 0) {
             return true;
         }
-
         HashMap<Character, Character> map = new HashMap();
         map.put('0', '0');
         map.put('1', '1');
@@ -32,7 +31,6 @@ public class StrobogrammaticNumber {
         int right = s.length() - 1;
 
         while (left <= right) {
-
             char cLeft = s.charAt(left);
             char cRight = s.charAt(right);
 
