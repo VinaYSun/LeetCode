@@ -44,7 +44,7 @@ public class GroupShiftedString {
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < s.length() - 1; i++) {
             int temp = (s.charAt(i+1) - s.charAt(i) + 26) % 26;
-            sb.append(i);
+            sb.append(temp);
         }
         return sb.toString();
     }
