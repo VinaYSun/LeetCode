@@ -37,7 +37,10 @@ public class ClosestNumberInSortedArray {
 
         if (diffStart > diffEnd) {
             return end;
+        } else if (diffStart <= diffEnd) {
+            return start;
         }
-        return start;
+
+        return -1;
     }
 }
