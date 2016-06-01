@@ -1,6 +1,8 @@
 package main;
 
 /**
+ * Array may have duplicates
+ *
  * Created by ysun on 5/29/16.
  */
 public class FindMinimumInRotatedSortedArrayII {
